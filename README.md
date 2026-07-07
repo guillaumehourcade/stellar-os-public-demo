@@ -1,23 +1,34 @@
 # Stellar OS — Public Demo
 
-Stellar OS is a fictional public demo of a patrimonial dashboard interface.
+Stellar OS is a public demonstration of a patrimonial cockpit interface.
 
-This repository contains only a demonstration version using 100% fictional data.
+This repository contains only a neutralized demo version. The companies, assets, tenants, addresses, shareholdings, loans and financial figures shown in the interface are fictional and used for presentation purposes only.
 
-## Demo status
+## Demo
 
-- All displayed companies, assets, tenants, figures and financial metrics are fictional.
-- No private client data is included.
-- AI/API calls are disabled in this public demo.
-- Document upload is disabled in the public demo.
-- The interface runs locally from demo.html.
+The demo runs as a static client-side web page from `demo.html`.
+
+Main modules shown in this public version:
+
+- Galaxy portfolio visualization
+- Digital Twin panels
+- Governance dashboard
+- Command simulations
+- Timeline
+- Map view
+- Document AI demo screen
+- Neural assistant demo screen
+
+## Privacy and security
+
+This public demo does not include real portfolio data.
+
+It does not use a production backend, a private database, live AI/API calls, real document upload, private client files, or private portfolio documents.
 
 ## Run locally
 
-Open demo.html in a web browser.
+Open `demo.html` in a modern web browser.
 
-## Important notice
+## Notice
 
-This project is shared as a visual and functional demonstration only.
-
-It is not connected to any real database, private portfolio, AI service or production backend.
+This project is shared as a visual and functional demonstration only. It is not a production system and should not be interpreted as financial, legal, tax or investment advice.
