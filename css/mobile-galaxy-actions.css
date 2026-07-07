@@ -4,12 +4,12 @@
   body.cine #g-tools,
   body.imm #g-tools {
     position: fixed !important;
-    right: max(12px, env(safe-area-inset-right)) !important;
-    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 118px) !important;
+    right: max(14px, env(safe-area-inset-right)) !important;
+    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 86px) !important;
     z-index: 1000 !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 10px !important;
+    gap: 8px !important;
     opacity: 1 !important;
     pointer-events: auto !important;
   }
@@ -17,16 +17,16 @@
   #m-galaxy.on #g-tools .icobtn,
   body.cine #g-tools .icobtn,
   body.imm #g-tools .icobtn {
-    width: 50px !important;
-    height: 50px !important;
-    border-radius: 16px !important;
-    font-size: 19px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 14px !important;
+    font-size: 16px !important;
     color: #FFE3A6 !important;
-    background: rgba(8, 13, 25, .92) !important;
-    border: 1px solid rgba(255, 200, 97, .58) !important;
-    box-shadow: 0 14px 34px -14px #000, 0 0 24px -10px rgba(255, 200, 97, .85) !important;
-    backdrop-filter: blur(16px) saturate(1.25) !important;
-    -webkit-backdrop-filter: blur(16px) saturate(1.25) !important;
+    background: rgba(8, 13, 25, .90) !important;
+    border: 1px solid rgba(255, 200, 97, .50) !important;
+    box-shadow: 0 12px 28px -14px #000, 0 0 20px -11px rgba(255, 200, 97, .80) !important;
+    backdrop-filter: blur(14px) saturate(1.2) !important;
+    -webkit-backdrop-filter: blur(14px) saturate(1.2) !important;
   }
 
   #m-galaxy.on .g-hint,
@@ -43,6 +43,11 @@
     font-size: 10px !important;
     padding: 8px 10px !important;
     z-index: 900 !important;
+    animation: demoBannerFadeMobile .7s ease 2s forwards !important;
+  }
+
+  @keyframes demoBannerFadeMobile {
+    to { opacity: 0; transform: translateY(8px); visibility: hidden; }
   }
 }
 
@@ -56,8 +61,18 @@
     z-index: 1000 !important;
     display: flex !important;
     flex-direction: column !important;
+    gap: 8px !important;
     opacity: 1 !important;
     pointer-events: auto !important;
+  }
+
+  body:has(#m-galaxy.on) #g-tools .icobtn,
+  body.cine #g-tools .icobtn,
+  body.imm #g-tools .icobtn {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 13px !important;
+    font-size: 15px !important;
   }
 
   body:has(#m-galaxy.on) .g-hint,
