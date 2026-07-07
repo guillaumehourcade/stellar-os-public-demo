@@ -1,0 +1,68 @@
+/* Correctif mobile Galaxy — boutons Cinéma / Plein écran lisibles sur iPhone */
+@media (max-width: 680px) {
+  #m-galaxy.on #g-tools,
+  body.cine #g-tools,
+  body.imm #g-tools {
+    position: fixed !important;
+    right: max(12px, env(safe-area-inset-right)) !important;
+    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 118px) !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  #m-galaxy.on #g-tools .icobtn,
+  body.cine #g-tools .icobtn,
+  body.imm #g-tools .icobtn {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 16px !important;
+    font-size: 19px !important;
+    color: #FFE3A6 !important;
+    background: rgba(8, 13, 25, .92) !important;
+    border: 1px solid rgba(255, 200, 97, .58) !important;
+    box-shadow: 0 14px 34px -14px #000, 0 0 24px -10px rgba(255, 200, 97, .85) !important;
+    backdrop-filter: blur(16px) saturate(1.25) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(1.25) !important;
+  }
+
+  #m-galaxy.on .g-hint,
+  body.cine .g-hint,
+  body.imm .g-hint {
+    display: none !important;
+  }
+
+  #demo-banner {
+    left: 10px !important;
+    right: 10px !important;
+    bottom: calc(max(10px, env(safe-area-inset-bottom)) + 62px) !important;
+    text-align: center !important;
+    font-size: 10px !important;
+    padding: 8px 10px !important;
+    z-index: 900 !important;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 560px) {
+  body:has(#m-galaxy.on) #g-tools,
+  body.cine #g-tools,
+  body.imm #g-tools {
+    position: fixed !important;
+    right: max(12px, env(safe-area-inset-right)) !important;
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  body:has(#m-galaxy.on) .g-hint,
+  body.cine .g-hint,
+  body.imm .g-hint {
+    display: none !important;
+  }
+}
