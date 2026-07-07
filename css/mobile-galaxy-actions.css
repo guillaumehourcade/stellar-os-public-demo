@@ -1,4 +1,4 @@
-/* Correctif mobile Galaxy — commandes discrètes et bandeau démo temporaire */
+/* Correctif mobile Galaxy — commandes discrètes, bandeau bas supprimé sur mobile */
 @media (max-width: 680px) {
   #m-galaxy.on #g-tools,
   body.cine #g-tools,
@@ -45,20 +45,10 @@
   }
 
   #demo-banner {
-    left: 12px !important;
-    right: auto !important;
-    max-width: calc(100vw - 24px) !important;
-    bottom: calc(max(8px, env(safe-area-inset-bottom)) + 50px) !important;
-    text-align: center !important;
-    font-size: 9px !important;
-    padding: 7px 10px !important;
-    z-index: 900 !important;
-    opacity: 1 !important;
-    animation: demoBannerFadeMobile .55s ease 2s forwards !important;
-  }
-
-  @keyframes demoBannerFadeMobile {
-    to { opacity: 0 !important; transform: translateY(10px) !important; visibility: hidden !important; pointer-events: none !important; }
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 }
 
@@ -90,17 +80,11 @@
 
   body:has(#m-galaxy.on) .g-hint,
   body.cine .g-hint,
-  body.imm .g-hint {
-    display: none !important;
-  }
-
+  body.imm .g-hint,
   #demo-banner {
-    animation: demoBannerFadeMobile .55s ease 2s forwards !important;
-    bottom: max(8px, env(safe-area-inset-bottom)) !important;
-    left: 12px !important;
-    right: auto !important;
-    max-width: 46vw !important;
-    font-size: 8.5px !important;
-    padding: 6px 9px !important;
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 }
