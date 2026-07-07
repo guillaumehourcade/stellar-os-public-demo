@@ -1,0 +1,37 @@
+/* ===== Anneau d'appui long ===== */
+#hold-ring{position:fixed;width:64px;height:64px;margin:-32px 0 0 -32px;z-index:150;pointer-events:none;opacity:0;transition:opacity .14s}
+#hold-ring.show{opacity:1}
+#hold-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+#hold-ring .bg{fill:none;stroke:rgba(255,200,97,.16);stroke-width:3}
+#hold-ring .fg{fill:none;stroke:var(--sun);stroke-width:3.4;stroke-linecap:round;stroke-dasharray:163;stroke-dashoffset:163;filter:drop-shadow(0 0 7px var(--sun))}
+#hold-ring.go .fg{animation:holdfill 2s cubic-bezier(.4,0,.2,1) forwards}
+@keyframes holdfill{to{stroke-dashoffset:0}}
+#hold-ring .cdot{fill:rgba(255,200,97,.06)}
+#hold-ring.go{animation:holdpulse 2s ease-out}
+@keyframes holdpulse{0%{transform:scale(.78)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+/* ===== Fiche explicative ===== */
+#explain{position:fixed;inset:0;z-index:200;display:none;align-items:flex-end;justify-content:center}
+#explain.on{display:flex}
+#explain .ex-bg{position:absolute;inset:0;background:rgba(3,6,12,.62);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);opacity:0;transition:opacity .3s}
+#explain.on .ex-bg{opacity:1}
+#explain .ex-card{position:relative;width:min(560px,94vw);max-height:86vh;overflow:auto;margin-bottom:max(18px,env(safe-area-inset-bottom));
+  background:linear-gradient(165deg,rgba(20,28,42,.96),rgba(9,13,22,.98));
+  border:1px solid rgba(120,170,235,.28);border-radius:22px;padding:26px 24px 30px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.5),0 30px 80px -20px rgba(0,0,0,.8),0 0 60px -12px rgba(80,140,220,.45);
+  transform:translateY(40px) scale(.98);opacity:0;transition:transform .42s cubic-bezier(.2,.9,.25,1),opacity .42s}
+#explain.on .ex-card{transform:none;opacity:1}
+#explain .ex-card::before{content:"";position:absolute;top:0;left:0;right:0;height:120px;border-radius:22px 22px 0 0;pointer-events:none;
+  background:radial-gradient(120% 80% at 30% -10%,rgba(111,227,255,.18),transparent 60%)}
+.ex-x{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--glass-edge);
+  background:var(--glass);color:var(--dim);font-size:15px;cursor:pointer;z-index:3}
+.ex-kick{font-family:var(--disp);font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--star);opacity:.9;text-shadow:0 0 12px rgba(111,227,255,.5)}
+.ex-term{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:6px 0 4px}
+.ex-t{font-family:var(--disp);font-weight:700;font-size:26px;letter-spacing:.02em;color:var(--ink);text-shadow:0 0 22px rgba(160,200,255,.3)}
+.ex-val{font-family:var(--mono);font-weight:600;font-size:15px;color:var(--sun-hi);padding:3px 11px;border-radius:9px;
+  background:rgba(255,200,97,.1);border:1px solid rgba(255,200,97,.3);text-shadow:0 0 12px rgba(255,200,97,.4)}
+.ex-sec{margin-top:18px}
+.ex-h{font-family:var(--disp);font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--sun);margin-bottom:7px;display:flex;align-items:center;gap:9px}
+.ex-h::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--sun);box-shadow:0 0 9px var(--sun)}
+.ex-d{font-size:14px;line-height:1.62;color:#D2DEF0}
+.ex-d.calc{font-family:var(--mono);font-size:14.5px;color:#FFE6B8;background:rgba(255,200,97,.08);border:1px solid rgba(255,200,97,.22);border-radius:13px;padding:14px 15px;line-height:1.66;font-weight:600}
+.ex-foot{margin-top:20px;font-size:10.5px;letter-spacing:.05em;color:var(--faint);text-align:center}

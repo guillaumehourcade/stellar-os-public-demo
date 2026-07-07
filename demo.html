@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<title>ORION CAPITAL — DÉMO · DONNÉES 100 % FICTIVES</title>
+<!-- ===== VERSION DÉMO — données 100 % fictives. Ne charge PAS js/00-data.js ni js/08-galaxy.js ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="nebula"></div>
+<canvas id="stars-bg"></canvas>
+
+<header id="hud">
+  <div id="hud-top">
+    <div id="brand"><span class="h">ORION&nbsp;CAPITAL</span><span class="s">DÉMO&nbsp;·&nbsp;DONNÉES&nbsp;100&nbsp;%&nbsp;FICTIVES</span></div>
+    <span id="wx-chip" title="Météo"></span>
+    <button class="icobtn" id="bt-music" title="Ambiance spatiale">♬</button>
+    <div id="clockbox"></div>
+  </div>
+  <div id="cockpit"></div>
+  <nav id="nav">
+    <button class="tab on" data-m="galaxy">Galaxy</button>
+    <button class="tab" data-m="gov">Governance</button>
+    <button class="tab" data-m="assets">Digital Twin</button>
+    <button class="tab" data-m="command">Command</button>
+    <button class="tab" data-m="docai">Document AI</button>
+    <button class="tab" data-m="timeline">Timeline</button>
+    <button class="tab" data-m="map">Map</button>
+    <button class="tab" data-m="valuation">Valeurs</button>
+    <button class="tab" data-m="neural">Neural</button>
+  </nav>
+</header>
+
+<section class="mod on" id="m-galaxy">
+  <div id="galaxy-canvas"><div id="galaxy-vignette"></div><div id="sun-glare"></div></div>
+  <canvas id="fg-canvas"></canvas>
+  <div id="cinema"></div>
+  <div id="dive"></div>
+  <div id="surf-vignette"></div>
+  <div class="g-legend" id="g-legend"></div>
+  <div id="g-tip"></div>
+  <button id="g-exit">← Retour système</button>
+  <div id="g-tools"><button class="icobtn" id="bt-cine" title="Mode cinéma">▶</button><button class="icobtn" id="bt-full" title="Plein écran">⤢</button></div>
+  <div id="voxbar">
+    <div class="vb-tools">
+      <button class="vb-tool on" data-tool="break" title="Casser">⛏</button>
+      <button class="vb-tool" data-tool="place" title="Poser">🧱</button>
+      <button class="vb-tool" data-tool="move" title="Se déplacer">✋</button>
+    </div>
+    <div class="vb-palette" id="vb-palette"></div>
+  </div>
+  <div id="letterbox"><div class="lb t"></div><div class="lb b"></div></div>
+  <div id="galaxy-vig"></div>
+  <div id="cine-grain"></div>
+  <div id="cine-card"><div class="cc-dot"></div><div class="cc-line"></div><div class="cc-body"></div></div>
+  <div class="g-hint">Glisser : orbiter · Pincer : zoom · Lunes = emprunts · Toucher une planète : jumeau numérique</div>
+</section>
+
+<section class="mod" id="m-gov"><div class="mod-pad" id="gov-pad"></div></section>
+<section class="mod" id="m-assets"><div class="mod-pad" id="assets-pad"></div></section>
+<section class="mod" id="m-command"><div class="mod-pad" id="command-pad"></div></section>
+<section class="mod" id="m-docai"><div class="mod-pad" id="docai-pad"></div></section>
+<section class="mod" id="m-timeline"><div class="mod-pad" id="timeline-pad"></div></section>
+<section class="mod" id="m-map"><div class="mod-pad">
+  <div class="section-title">Pilotage géographique</div>
+  <div class="map-toggle"><button class="btn gold" id="bt-plan">Plan embarqué</button><button class="btn" id="bt-sat">Satellite</button></div>
+  <div class="sub" id="map-note" style="margin:-4px 0 10px"></div>
+  <div id="map"></div></div></section>
+<section class="mod" id="m-valuation"><div class="mod-pad" id="valuation-pad"></div></section>
+<section class="mod" id="m-neural"><div class="mod-pad" id="neural-pad"></div></section>
+
+<aside id="twin"><button id="twin-close">✕</button><div id="twin-body"></div></aside>
+<div id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+<script>window.STELLAR_DEMO = true;</script>
+<script src="js/geopack.data.js"></script>
+<script src="js/00-data.demo.js"></script>
+<script src="js/01-store.js"></script>
+<script src="js/02-engine.js"></script>
+<script src="js/03-cockpit.js"></script>
+<script src="js/04-twin.js"></script>
+<script src="js/05-command.js"></script>
+<script src="js/06-map.js"></script>
+<script src="js/07-dataroom.js"></script>
+<script src="js/08-galaxy.demo.js"></script>
+<script src="js/09-app.js"></script>
+
+<link rel="stylesheet" href="css/overlay.css">
+<div id="hold-ring"><svg viewBox="0 0 56 56"><circle class="bg" cx="28" cy="28" r="26"/><circle class="cdot" cx="28" cy="28" r="22"/><circle class="fg" cx="28" cy="28" r="26"/></svg></div>
+<div id="explain"><div class="ex-bg"></div><div class="ex-card">
+  <button class="ex-x" aria-label="Fermer">&#10005;</button>
+  <div class="ex-kick">Lexique patrimonial</div>
+  <div class="ex-term"><span class="ex-t"></span><span class="ex-val"></span></div>
+  <div class="ex-sec"><div class="ex-h">C'est quoi&nbsp;?</div><div class="ex-d def"></div></div>
+  <div class="ex-sec ex-calcsec"><div class="ex-h">Le calcul</div><div class="ex-d calc"></div></div>
+  <div class="ex-sec"><div class="ex-h">Concrètement pour toi</div><div class="ex-d ctx"></div></div>
+  <div class="ex-foot">Maintiens le doigt 2 s sur n'importe quel chiffre ou terme</div>
+</div></div>
+
+<div id="demo-banner" style="position:fixed;left:12px;bottom:12px;z-index:300;pointer-events:none;font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;letter-spacing:.14em;color:#FFC861;background:rgba(10,14,24,.88);border:1px solid rgba(255,200,97,.5);border-radius:10px;padding:8px 14px;box-shadow:0 0 18px rgba(255,200,97,.25)">ORION CAPITAL — DÉMO · DONNÉES 100 % FICTIVES</div>
+
+</body>
+</html>
